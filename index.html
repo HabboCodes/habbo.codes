@@ -29,37 +29,9 @@
 </head>
 <body>
     <h1>lechris reigns supreme</h1>
-    <video id="myVideo" width="500" height="500" controls loop>
+    <video width="500" height="500" controls autoplay loop>
         <source src="lechris-reigns-supreme.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var video = document.getElementById('myVideo');
-            
-            // Function to play video
-            function playVideo() {
-                video.play().catch(function(error) {
-                    console.log("Autoplay was prevented:", error);
-                });
-            }
-
-            // Try to play immediately
-            playVideo();
-
-            // Play on any click on the document
-            document.addEventListener('click', playVideo);
-
-            // Play on any keypress
-            document.addEventListener('keypress', playVideo);
-
-            // Remove event listeners once played
-            video.onplay = function() {
-                document.removeEventListener('click', playVideo);
-                document.removeEventListener('keypress', playVideo);
-            };
-        });
-    </script>
 </body>
 </html>
